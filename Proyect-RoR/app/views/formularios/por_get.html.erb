@@ -1,0 +1,20 @@
+<h1>Formularios#por_get</h1>
+<p>Find me in app/views/formularios/por_get.html.erb</p>
+
+
+<h2> Por favor ingrese el código del usuario </h2>
+<%= form_tag({:controller => "formularios", :action => "por_get"}, :method => "get") do %>
+   <%= label_tag "código", "Código de usuario" %>
+   <%= text_field_tag "codigo", "", :size => 5, :maxlenght => 5, :placeholder => "Código", :required => "required" %>
+   <br />
+   <%= submit_tag "Enviar" %>
+<% end %>
+<div id="resultados">
+   <% if @codigo %>
+      <% if @usuario %>
+         <p> Datos de usuario <br><%= @usuario[:nombre] %> <%= @usuario[:apellido] %> </p>
+      <% else %>
+         <p> El usuario con el código <%= @codigo %> no ha podido ser encontrado. </p>
+      <% end %>
+   <% end %>
+</div>
