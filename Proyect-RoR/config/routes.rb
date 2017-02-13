@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'test_sesiones/iniciar_sesion'
+  post "test_sesiones/iniciar_sesion"
+
+  get 'test_sesiones/cerrar_sesion'
+
+  get 'test_sesiones/bienvenida'
+
+  get 'test_cookies/identificacion'
+  post 'test_cookies/identificacion'
+
   get "archivos/subir_archivos"
   post "archivos/subir_archivos"
   get "archivos/listar_archivos"
